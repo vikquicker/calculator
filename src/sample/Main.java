@@ -6,11 +6,13 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import sample.elements.Buttons;
 import sample.elements.InputField;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class Main extends Application {
@@ -69,7 +71,7 @@ public class Main extends Application {
         buttons.getEight().setMinSize(50, 50);
         buttons.getNine().setMinSize(50, 50);
         buttons.getZero().setMinSize(105, 50);
-        buttons.getDeleteElement().setMinSize(282, 61);
+        buttons.getDeleteElement().setMinSize(270, 50);
         buttons.getComma().setMinSize(50, 50);
 
         StackPane.setAlignment(buttons.getOne(), Pos.TOP_LEFT);
@@ -102,7 +104,7 @@ public class Main extends Application {
         buttons.getMinus().setMinSize(50, 50);
         buttons.getMultiply().setMinSize(50, 50);
         buttons.getDivision().setMinSize(50, 50);
-        buttons.getEquals().setMinSize(62, 215);
+        buttons.getEquals().setMinSize(50, 215);
 
         StackPane.setAlignment(buttons.getPlus(), Pos.TOP_LEFT);
         StackPane.setAlignment(buttons.getMinus(), Pos.TOP_LEFT);
@@ -469,6 +471,9 @@ public class Main extends Application {
                 buttons.getNine(), buttons.getZero(), buttons.getPlus(), buttons.getMinus(), buttons.getMultiply(),
                 buttons.getDivision(), buttons.getEquals(), buttons.getDeleteElement(), buttons.getComma(),
                 inputField.getInputField());
+
+        InputStream inputStreamIco = getClass().getResourceAsStream("ico.png");
+        stage.getIcons().add(new Image(inputStreamIco));
 
         Scene scene = new Scene(root, 280, 335);
         stage.setScene(scene);
